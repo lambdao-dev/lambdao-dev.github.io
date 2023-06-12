@@ -1,0 +1,125 @@
+$lambdao_purple: rgb(62, 10, 113);
+$lambdao_green: rgb(11, 135, 114);
+$lambdao_orange: rgb(248, 136, 0);
+$lambdao_yellow: rgb(240, 171, 0);
+$lambdao_grey: rgb(77, 77, 77);
+$lambdao_grey_light: rgb(222, 222, 222);
+$lambdao_grey_dark: rgb(22, 22, 22);
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+a {
+    font-weight: bold;
+}
+
+html, html[data-theme="light"] {
+  	background: white;
+    color: black;
+
+    a {
+        color: $lambdao_purple;
+    }
+}
+
+html[data-theme="dark"] {
+  	background: $lambdao_grey_dark;
+    color: white;
+
+    a {
+    color: $lambdao_yellow;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+	html, html[data-theme="dark"] {
+        background: $lambdao_grey_dark;
+        color: white;
+
+        a {
+        color: $lambdao_yellow;
+    }
+	}
+	html[data-theme="light"] {
+        background: white;
+        color: black;
+
+        a {
+        color: $lambdao_purple;
+    }
+	}
+}
+
+@font-face {
+  font-family: "urw_gothic_lbook";
+  src: url("/assets/fonts/urw-gothic-l-book-webfont.woff2") format("woff2"),
+    url("/assets/fonts/urw-gothic-l-book-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  line-height: 1.35;
+  font-family: "urw_gothic_lbook", "Didact Gothic", sans-serif;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.focus {
+  margin: auto;
+  display: block;
+  text-align:center;
+}
+
+.line-length {
+  width: 80ch;
+}
+
+nav {
+  text-align: center;
+}
+
+nav > ul {
+  display: inline-block;
+  list-style-type: none;
+}
+
+nav li {
+  padding: 1em;
+  float: left;
+}
+
+.paragraph {
+  margin: 1em 0;
+  display: block;
+}
+
+.main {
+  margin: auto;
+  display: block;
+}
+
+ul {
+  list-style-type: square;
+}
+
+h2 {
+ text-decoration: underline $lambdao_grey;
+}
+
+.latale {
+ text-decoration: underline $lambdao_orange;
+}
+
+.latdis {
+ text-decoration: underline $lambdao_green;
+}

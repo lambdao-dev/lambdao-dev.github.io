@@ -1,0 +1,12 @@
+<nav>
+    <ul>
+    {% for item in site.data.navigation %}
+    <li>
+    <a href="{{ item.link }}" {% if page.url == item.link %}class="nav-current"{% endif %}>
+      {{ item.name }}
+    </a>
+    </li>
+  {% endfor %}
+        <li><a id="theme-toggle" href="#" onclick="modeSwitcher()">Switch colors</a></li>
+</ul>
+</nav>
