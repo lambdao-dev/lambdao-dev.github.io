@@ -8,7 +8,7 @@ _A business juggling finances, technical debt, and innovation credits_
 For almost all businesses, software is only a tool to scale operations.
 The code itself has no importance, what matters is the value it delivers by its functionality.
 Therefore, the value of "good" code is in principle nonexistent, but it is in practice because "bad" code collapses in itself in the long term. 
-The term "architecture" describing the general organisation of code is well-chosen as the metaphor holds in many ways.
+The term "architecture" describing the general organization of code is well-chosen as the metaphor holds in many ways.
 A solid structure will be difficult to evolve, unless the proper openings have been thought of. 
 A tent would be the best choice if the only thing considered was cost, but there are hard requirements that should be considered, making the construction of the proper building necessary.
 
@@ -25,13 +25,13 @@ Ironically, the end-result of over-simplification is a lot of complexity.
 An example would be that some function processes a form.
 A new business requirement comes in, and the form needs to be processed in a different way.
 The simplest way is just to write a new function. 
-If a new requirements comes in to pre-process the form, the code should be combed to find any place where the form is processed. 
+If a new requirement comes in to pre-process the form, the code should be combed to find any place where the form is processed.
 A simple refactoring would create a module that processes the form, giving a single entry point.
 This problem might compound with poor schema design, especially if working with unstructured databases.
 
 ## Over-engineering and Cargo-culting in software design
 
-Cargo-culting[^cargo] is as a broad concept the idea to copy the appearance of something without understanding the real purpose. There are different concepts exploring this problem, e.g. hype-driven development, or career-driven development.
+Cargo-culting[^cargo] is a broad concept that refers to the idea of copying the appearance of something without understanding its real purpose. There are different concepts that explore this problem, e.g. hype-driven development, or career-driven development.
 This would make materialize in the following ways:
 1) implementing functionality that is not needed
 2) making the architecture of the software more complex than it needs to be
@@ -45,7 +45,7 @@ What can be done to avoid these pitfalls?
 
 ### What is the business focus?
 
-This is less of a software design problem than an organisational one.
+This is less of a software design problem than an organizational one.
 This might be more of a problem for a very small company, where the technical founder may be playing all the roles in good part.
 An important principle to keep in mind is [Conway's law](https://martinfowler.com/bliki/ConwaysLaw.html); the architecture of the software will reflect the communication structure of the organization.
 If it's only a technical person, it will likely reflect the complicated mind of that person.
@@ -58,7 +58,7 @@ In a lot of cases, especially in B2B, the answer would not be "the same as Faceb
 For a small country like Belgium, PostgreSQL can handle the load of the whole country without a lot of effort.
 Sure, it's not as cool as saying that the target is "any human in the world and their pets", but there are actually few Facebooks in the world.
 
-Assuming the target has been properly defined, it is easy work out the components that would be needed to support that target.
+Assuming the target has been properly defined, it is easy to work out the components that would be needed to support that target.
 Start with a simple architecture, keeping the design in check by evaluating how much effort it would take to drop in the component. 
 While this reflection won't be perfect, it should be enough for a future implementation to not be too painful.
 A lot of frameworks have support for direct drop-in of components; for example in Django, adding a Redis cache is a matter of adding a few lines in the settings file and some decorators.
