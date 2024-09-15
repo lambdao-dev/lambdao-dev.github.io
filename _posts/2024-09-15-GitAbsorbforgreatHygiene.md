@@ -35,7 +35,7 @@ Let's assume that we want to implement a feature, which requires changes to a fe
 You're not sure exactly about all the changes that are needed, so you make a few changes, to functions `f_1`, `f_2`, `g`, and `h`, and then test them.
 
 The first thing is to make separate commits for each function.
-This is done with `git add --patch` (`g ap`), which allows to stage only parts of a file.
+This is done with `git add --patch` (`g ap`), which allows us to stage only parts of a file.
 With this, we probably have more commits than necessary, but this will be a good starting point.
 
 Continuing the development, changes to `f_1`  result in changes to a number of subfunctions `s_1` to `s_k`. 
@@ -50,7 +50,7 @@ It provides exactly the keywords to perform these operations.
 In bidoolgit, this is shortened to `g r $N`, where `$N` is the number of commits to process.
 
 After a programming phase that may be exploratory, we want the signs to lead us directly to the correct solution, and put us in the right frame of mind to understand the code.
-You don't map a territory by leaving stones to indicate the path where you passed by, but give the most efficient route.
+You don't map a territory by leaving stones to indicate the path you took; instead, you provide the most efficient route.
 
 ## Mandatory code review with absorb
 
@@ -65,9 +65,9 @@ However, if you directly rebase the changes, the commentaries will reference out
 
 This is where `git absorb` comes in. 
 With this, commits are collected and magically marked as `fixup` to the commits they affect.
-The review can proceed according to the diff, and just before merge the changes can be absorbed into the correct commits.
+The review can proceed according to the diff, and just before merge, the changes can be absorbed into the correct commits.
 
-The example of the PR review is the where it provides the most value to improve teamwork, but once this is used enough it quickly becomes part of the standard workflow.
+The example of the PR review is where it provides the most value to improve teamwork, but once this is used enough, it quickly becomes part of the standard workflow.
 
 ## The two bad approaches to Git
 
@@ -84,8 +84,7 @@ What a horror story.
 The fear is not completely unfounded when considering that operations such as interactive rebase are destructive.
 Once two commits are squashed, it might be a pain to separate them again.
 There is a way to recover from this, and it is the reflog.
-If you type `g ref` (it is longer to type as I rarely mess up), you get a history 
-of all the operations that have been done.
+In bidoolgit, if you type `g ref` (it is longer to type as I rarely mess up), you get a history of all the operations that have been done.
 With `g rb` (mnemonic is "rollback"), you can rollback to a given state.
 
 This is the ultimate safety net, you can screw up all you want, yet all it takes is a few seconds to recover.
@@ -99,4 +98,4 @@ There are two other tools that I use commonly on top of Git:
 - [tig](https://jonas.github.io/tig/doc/tig.1.html), a text-mode interface for Git that is nice for browsing the history
 
 Make sure to make git the whole team's most trustworthy sidekick. 
-Once Git has become your , it feels really primitive to work with technologies that do not have the same level of safety.
+Once Git has become yours, it feels really primitive to work with technologies that do not have the same level of safety.
