@@ -15,7 +15,7 @@ You might think that you can have everything in mind.
 Even if upcoming expenses and upcoming revenues are in good balance, the cash flow could be a problem.
 It would be hard to mentally keep track of everything, and writing things down greatly eliminates that risk.
 Accountants know that their customers might have the best entrepreneurial spirit, but they also know that the business will not survive if the numbers are not right. 
-Money if the lifeblood of the company.
+Money is the lifeblood of the company.
 
 Moreover, in case of accident, the company can continue to operate, at least for a limited time.
 
@@ -24,11 +24,11 @@ By getting an understanding of the basics of accounting, you can save on your ac
 ## Focus on the core business
 
 Learn the cases that make up 90% of the business, leave the rest to the accountant.
-Accounting requires a lot of time, and regulation always change. 
-The goal is not to remove the accountant, but to get him supervise and review the books.
+Accounting requires a lot of time, and regulations always change.
+The goal is not to remove the accountant, but to get him to supervise and review the books.
 
 Check that the invoice layout follows the legal requirements, and that the invoice number is unique.
-There are a few mentions that are required in all cases (like the company's VAT number) and some that are required in specific cases. 
+There are a few mentions that are required in all cases (like the company's VAT number), and some that are required in specific cases.
 Make sure to go over the different cases with the accountant.
 
 ## Get an idea of the Chart of Account
@@ -47,19 +47,19 @@ Once you figure out the main purchase and sales, the taxes will follow the same 
 
 The rate is not the only thing that matters (actually we should say computation, as various taxes can be computed with algorithms that are way more complicated than a simple percentage).
 Taxes are also categorized by a grid, which is basically a sets of codes that will be used to aggregate the taxes.
-This purely for reporting to the state, but this is important to get right as fines can be quite high.
+This is purely for reporting to the state, but this is important to get right, as fines can be quite high.
 
 ### The fiscal positions of your business 
 
 In the EU, there are 2 cases, B2C and B2B.
 The B2C is straightforward, VAT is included in price and the business has to pay it back to the state.
 The B2B is divided in 3 cases: 
-1) national B2B sales, where VAT handled in the typical way 
-2) intra-community B2B sales, where VAT should be omitted; the invoice bear a mention, and the customer will write it off in self-liquidation
+1) national B2B sales, where VAT is handled in the typical way
+2) intra-community B2B sales, where VAT should be omitted; the invoice bears a mention, and the customer will write it off in self-liquidation
 3) extra community sales, sales tax is set to 0%
 
 As a buyer in case (3), it is important to properly encode the purchase, as it will impact the proper tax codes.
-The codes should compensate each others, but it is still a costly mistake to not encode it.
+The codes should compensate for each other, but it is still a costly mistake to not encode it.
 (In particular, this might participate in the computation of certain financial thresholds, whereas 0% would not.)
 
 So in the general case, there should be a tax mapping depending on the fiscal position of the transaction.
@@ -75,7 +75,7 @@ Moreover, there are limits in the amounts to qualify as a deductible expense.
 
 ## Get an idea of amortization schemes
 
-Generally small equipment ca be marked as an expense, while big equipment should be amortized over a few years.
+Generally, small equipment can be marked as an expense, while big equipment should be amortized over a few years.
 Moreover, the first year should be prorated depending on the date of acquisition.
 The limit should be around 250€, but it should be checked with the accountant.
 
@@ -106,7 +106,7 @@ This includes what layout to use, what to highlight, etc.
 ### Pivotal decisions
 
 When making important structural changes, the accountant can provide a lot of insight.
-Setting up sub-companies, changing the legal form, can have make a big difference and once again they will have a lot of experience in these matters. 
+Setting up sub-companies, changing the legal form, can make a big difference, and once again they will have a lot of experience in these matters.
 
 ## Software
 
