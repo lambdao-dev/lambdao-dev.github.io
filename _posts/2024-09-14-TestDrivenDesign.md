@@ -38,7 +38,7 @@ When writing the test, it is natural to want to pass the values as arguments, ra
 
 ### Tests should be black-box
 
-A result of not doing that is a test that requires to do things like monkey-patch functions, or to use a lot of setup code. 
+A result of not doing that is a test that requires to do things like monkey-patching functions, or using a lot of setup code.
 This is typical of the "test as an afterthought" approach.
 
 Other bad ideas are assertions that `some_subfunction` is called.
@@ -66,11 +66,11 @@ A good exercise is to go over the test once it is working and remove every line 
 ### Only one test of each kind
 
 Typically, there should be one test for the happy path, one for each edge case, and one for the error case.
-After testing on the "Zhen" input, testing with "Ning" might not be very useful; testing with "Siddhartha Gautama Shakyamuni Buddha" might be as it test a much longer input.
+After testing on the "Zhen" input, testing with "Ning" might not be very useful; testing with "Siddhartha Gautama Shakyamuni Buddha" might be, as it tests a much longer input.
 
 ### Make more tests for crucial core logic
 
-Slightly contradicting the previous point, if the code has been well architected, the core logic should be very well-defined.
+Slightly contradicting the previous point, if the code has been well-architected, the core logic should be very well-defined.
 This can, and probably should, be tested exhaustively.
 
 On the other hand, the outer parts of the code should be mostly framework boilerplate that does not require testing. 
@@ -78,7 +78,7 @@ Once again, only test what is necessary.
 
 ### Code Reflection
 
-Similarly to how code architecture should be simiarly organized as a textbook, with chapters, sections and paragraphs, the tests should be organized in a similar way.
+Similarly to how code architecture should be similarly organized as a textbook, with chapters, sections and paragraphs, the tests should be organized in a similar way.
 If you started to code with a test, the first test should be verifying the entire flow.
 As you go on, the tests should be more and more focused on the details.
 The end result should be a test suite that is a mirror of the codebase intention rather than its implementation .
@@ -111,15 +111,15 @@ Some tests can be added to ensure that the processing is exhaustive, but this is
 
 Type systems help if used correctly, but there is complexity and discipline required to really reap the benefits. The same discipline that is required to write good tests.
 
-Note that this example clearly refers to a language with a loose type-system (typed Python, which has a fair share of issues). However, even languages with stronger type systems we will find more complicated issues that require some testing.
+Note that this example clearly refers to a language with a loose type-system (typed Python, which has a fair share of issues). However, even in languages with stronger type systems we will find more complicated issues that require some testing.
 
 ## Tests and Trust
 
-The common theme is there is no shortcut for good architecture, and heavy coverage of a mess is making things worse, as it solidifies the mess. 
+The common theme is that there are no shortcuts to achieving good architecture, and heavy coverage of a mess is making things worse, as it solidifies the mess.
 
-In the end, it might be better to have a codebase that is 40% covered, but where the tests are good, than a codebase that is 95% covered, but where the tests are bad.
+In the end, it might be better to have a codebase that is 40% covered, but where the tests are good, rather than a codebase that is 95% covered, but where the tests are bad.
 This, however, might be a very tough sell in a corporate environment.
 
 Trust is the real value. 
-You don't want to be dealing with urgent production issues, and you don't want to doubt your team mates work.
+You don't want to deal with urgent production issues, and you don't want to doubt your teammates' work.
 Making sure that tests are useful rather than a chore is an important part of that trust.
