@@ -8,12 +8,12 @@ _A good git history provides a lot of value, and absorb helps in that process_
 Maintaining code is not an easy task.
 Any tool that helps in that process should be used to its full potential.
 
-During development, Git commands are the most used, just behind the commands to run the server and run the tests.
-Since Git is so used, I have refined my workflow to be as efficient as possible:
+During development, git commands are the most used, just behind the commands to run the server and run the tests.
+Since git is so used, I have refined my workflow to be as efficient as possible:
 https://github.com/len-foss/bidoolgit/
 Note that it does not include every command, just the ones that I use most commonly and which benefit from being shortened.
 
-A good Git history is often neglected, but it is a very valuable asset. 
+A good git history is often neglected, but it is a very valuable asset. 
 The only issue is that if no effort is put into it, no value can be extracted from it; it does not come for free.
 
 ## What makes a commit history valuable?
@@ -27,7 +27,7 @@ Having a good description is just a matter of reading [a good reference](https:/
 The second point is the crux of the issue.
 Development can be a messy process; it is easy to organize the commits in a logical way in hindsight, but not while we are still barely trying to make sense of everything.
 Memories are actually a living process; they are always re-evaluated according to the narratives that the present self has chosen as definition.
-That is the approach that Git takes with history.
+That is the approach that git takes with history.
 
 ## Mapping unknown territories
 
@@ -69,13 +69,13 @@ The review can proceed according to the diff, and just before merge, the changes
 
 The example of the PR review is where it provides the most value to improve teamwork, but once this is used enough, it quickly becomes part of the standard workflow.
 
-## The two bad approaches to Git
+## The two bad approaches to git
 
-There are two extreme ways to use Git badly.
+There are two extreme ways to use git badly.
 One is to commit everything every five minutes.
 It is somewhat useful during the development, but useless for the future.
 The other is to only commit when the feature is done.
-This is usually done by inexperienced developers who still see Git as something scary and not as the most trustworthy tool that always has your back (these are the people with `repo (1)`, `repo (2)`, and `repo (really final this time)` in their directory).
+This is usually done by inexperienced developers who still see git as something scary and not as the most trustworthy tool that always has your back (these are the people with `repo (1)`, `repo (2)`, and `repo (really final this time)` in their directory).
 You might end up with a detached head. 
 What a horror story.
 
@@ -93,9 +93,9 @@ This is the ultimate safety net, you can screw up all you want, yet all it takes
 
 When the whole team integrates these practices, the history becomes a very useful tool to work while debugging and refactoring.
 
-There are two other tools that I use commonly on top of Git: 
-- [Delta](https://dandavison.github.io/delta/), a nice diff tool that can be used as Git's default pager
-- [tig](https://jonas.github.io/tig/doc/tig.1.html), a text-mode interface for Git that is nice for browsing the history
+There are two other tools that I use commonly on top of git: 
+- [Delta](https://dandavison.github.io/delta/), a nice diff tool that can be used as git's default pager
+- [tig](https://jonas.github.io/tig/doc/tig.1.html), a text-mode interface for git that is nice for browsing the history
 
 Make sure to make git the whole team's most trustworthy sidekick. 
-Once Git has become yours, it feels really primitive to work with technologies that do not have the same level of safety.
+Once git has become yours, it feels really primitive to work with technologies that do not have the same level of safety.
