@@ -1,6 +1,7 @@
 ---
 title: Git Absorb, the power tool for best Git hygiene 
-image: /assets/img/lambdao_logo_white.svg
+author: len
+image: /assets/img/lambdao_preview.webp
 ---
 
 _A good git history provides a lot of value, and absorb helps in that process_

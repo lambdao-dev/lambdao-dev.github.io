@@ -1,6 +1,7 @@
 ---
 title: The value of code
-image: /assets/img/lambdao_logo_white.svg
+author: len
+image: /assets/img/lambdao_preview.webp
 ---
 
 _A business juggling finances, technical debt, and innovation credits_

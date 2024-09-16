@@ -1,6 +1,7 @@
 ---
 title: Test Driven Design for low coverage
-image: /assets/img/lambdao_logo_white.svg
+author: len
+image: /assets/img/lambdao_preview.webp
 ---
 
 _All code is a liability, so each line should count_

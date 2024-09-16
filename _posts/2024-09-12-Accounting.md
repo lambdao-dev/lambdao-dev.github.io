@@ -1,6 +1,7 @@
 ---
 title: Accounting basics for small businesses 
-image: /assets/img/lambdao_logo_white.svg
+author: len
+image: /assets/img/lambdao_preview.webp
 ---
 
 _Learn the basics to create a working partnership with your accountant_

@@ -1,5 +1,6 @@
 ---
 title: The Metric Dilemma
+image: /assets/img/lambdao_preview.webp
 ---
 
 _Metrics are the way to objective success. Or are they?_
