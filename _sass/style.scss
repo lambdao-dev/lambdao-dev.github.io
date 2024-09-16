@@ -113,7 +113,13 @@ ul {
 }
 
 h2 {
- text-decoration: underline $lambdao_grey;
+ text-decoration: underline $lambdao_purple;
+ text-decoration-thickness: 3px;
+}
+
+h3 {
+ text-decoration: underline $lambdao_orange;
+ text-decoration-thickness: 2px;
 }
 
 .latale {
