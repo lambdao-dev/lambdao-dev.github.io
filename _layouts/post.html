@@ -7,8 +7,10 @@ layout: default
   <h1>{{ page.title }}</h1>
   <h3>{{ page.date | date: "%-d %B %Y"}}</h3>
   <img src="/assets/img/lambdao_hex_long_white.svg">
-  <div class="main-content">
+  <div class="main">
   {{ content }}
   </div>
   <img src="/assets/img/lambdao_hex_long_white.svg">
-</div>
+  <div class="main" id="authorship">
+      <p>-- {{ page.author | default: "lambdao" }}</p>
+  </div>
