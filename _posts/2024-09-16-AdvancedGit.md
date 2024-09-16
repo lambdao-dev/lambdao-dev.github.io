@@ -4,10 +4,12 @@ author: len
 image: /assets/img/lambdao_preview.webp
 ---
 
-<!-- Complex situations may require advanced knowledge, but  techniques, but_ -->
-_Navigating uncommon complex situations in project workflow_
+_Easy ways to deal with uncommon complex situations in project lifecycle_
 
 In contrast with the previous articles, which suggest to fully integrate the daily workflow, this is about the complex situations that may arise only a few times in a project.
+
+There are a few advanced git techniques that can help in more complex situations.
+The best thing is, you don't even need to really know how to come up with the solutions, just to know how to look for them.
 
 ## A cautionary tale
 
@@ -15,10 +17,10 @@ In one company I worked, there was a day when pulling the master branch took a l
 A very long time.
 For security reasons, we had to work on the code through ssh on a rather slow machine, and so we were advised not to pull while they sorted out the situation.
 
-What happened was that the tests generated hundred of megabytes of data in the project folder.
+What happened was that the tests generated hundreds of megabytes of data in the project folder.
 Somebody committed all that to master, and pushed apparently without noticing anything (was he using an IDE?).
 By the end of the day, they had sorted out the situation.
-The project lead created a new repository from an archive of the day before, and deleted the old one.
+The project lead created a new repository from a zip archive of the day before, and deleted the old one, effectively wiping out the whole history.
 
 You see, reverting the commit means that the commit is still in history, so the repository will stay with hundreds of megabytes forever.
 Right?
@@ -31,9 +33,6 @@ Going back to the source, the test data folder that was created should have been
 
 To this day, I cannot fathom how a team could do something like this.
 The project lead was in another country and notoriously in bad terms with the lead of my own team, so we were told we had to roll with it.
-
-There are a few advanced git techniques that can help in more complex situations.
-The best thing is, you don't even need to really know how to come up with the solutions, just to know how to look for them.
 
 ## Get all files changes affected by a feature branch
 
@@ -49,6 +48,8 @@ With this command, you can get all the files that were changed by a feature bran
 ```bash
 git diff --name-only master...feature
 ```
+
+Actually, the hard work is in configuring the CI pipeline properly.
 
 ## Import history from another repository
 
@@ -89,3 +90,5 @@ git rebase -r --root --exec "git commit --amend --no-edit --author 'New Author N
 ## Complicated situations have a simple solution
 
 With git, there is never a (good) reason to panic.
+Git internals are complex and the commands are not always intuitive.
+But whatever the situation, there is always a (reasonably simple) way to solve it.
