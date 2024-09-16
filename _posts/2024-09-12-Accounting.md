@@ -1,5 +1,5 @@
 ---
-title: Basics accounting for small businesses 
+title: Accounting basics for small businesses 
 image: /assets/img/lambdao_logo_white.svg
 ---
 
