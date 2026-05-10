@@ -33,10 +33,10 @@ This problem might compound with poor schema design, especially if working with 
 ## Over-engineering and Cargo-culting in software design
 
 Cargo-culting[^cargo] is a broad concept that refers to the idea of copying the appearance of something without understanding its real purpose. There are different concepts that explore this problem, e.g. hype-driven development, or career-driven development.
-This would make materialize in the following ways:
-1) implementing functionality that is not needed
-2) making the architecture of the software more complex than it needs to be
-3) using the latest, unfinished and unstable, technology
+This would materialize in the following ways:
+1. implementing functionality that is not needed
+2. making the architecture of the software more complex than it needs to be
+3. using the latest, unfinished and unstable, technology
 
 It does not mean that it's always bad to use these technologies, but it's important to understand the trade-offs, and make them with full conscience.
 

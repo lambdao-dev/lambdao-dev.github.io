@@ -72,3 +72,5 @@ While free, open-source software comes with hidden costs, often involving more w
 But think of it this way: eating healthy may come with an upfront cost, but what’s the long-term price of not eating healthy?
 
 So, in the end, what currency would you prefer to spend: your time now, or dealing with long-term consequences later?
+
+[^topo]: it's a pun with https://en.wikipedia.org/wiki/Clopen_set, but in many case it would be better described as Schrödinger's openness, which would take meaning depending on the interest of the parent company.
