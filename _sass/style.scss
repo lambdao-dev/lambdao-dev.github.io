@@ -157,3 +157,13 @@ h3 {
 .w3rd {
   width: 33%;
 }
+
+.w2third {
+  width: 66%;
+}
+
+.image-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

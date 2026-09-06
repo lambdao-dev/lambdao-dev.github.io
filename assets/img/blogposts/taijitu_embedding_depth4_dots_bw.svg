@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+     role="img" aria-labelledby="title desc">
+  <title id="title">Four-level embedded taijitu with small dots</title>
+  <desc id="desc">Four nested red and blue taijitu with small eye dots. Each level is 33 percent of its parent's diameter and rotated another 230 degrees.</desc>
+
+  <defs>
+    <!-- Canonical taijitu: diameter 200, centred at the origin. -->
+    <g id="taijitu">
+      <circle cx="0" cy="0" r="100" fill="#ffffff"/>
+      <path fill="#000000" d="
+        M 0,-100
+        A 100,100 0 0 1 0,100
+        A 50,50 0 0 1 0,0
+        A 50,50 0 0 0 0,-100
+        Z"/>
+      <!-- Radius 12, reduced from the original radius of 15. -->
+      <circle cx="0" cy="-50" r="12" fill="#000000"/>
+      <circle cx="0" cy="50" r="12" fill="#ffffff"/>
+    </g>
+  </defs>
+
+  <!-- Main taijitu: diameter 448. -->
+  <g transform="translate(256 256) scale(2.24)">
+    <use href="#taijitu"/>
+  </g>
+
+  <!-- Level 2: 33% of level 1; rotation = 230°. -->
+  <g transform="translate(256 256) rotate(230) scale(.7392)">
+    <use href="#taijitu"/>
+  </g>
+
+  <!-- Level 3: 33% of level 2; cumulative rotation = 460° (100°). -->
+  <g transform="translate(256 256) rotate(460) scale(.243936)">
+    <use href="#taijitu"/>
+  </g>
+
+  <!-- Level 4: 33% of level 3; cumulative rotation = 690° (330°). -->
+  <g transform="translate(256 256) rotate(690) scale(.08049888)">
+    <use href="#taijitu"/>
+  </g>
+</svg>
