@@ -84,7 +84,7 @@ html[data-theme="dark"] {
 
 body {
   line-height: 1.35;
-  font-family: "Quattrocento", serif;
+  font-family: "Quattrocento", sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -108,6 +108,7 @@ img {
 
 nav {
   text-align: center;
+  font-family: "urw_gothic_lbook", "Didact Gothic", sans-serif;
 }
 
 nav > ul {
@@ -146,10 +147,12 @@ h3 {
 
 .latale {
  text-decoration: underline $lambdao_orange;
+ font-family: "urw_gothic_lbook", "Didact Gothic", sans-serif;
 }
 
 .latdis {
  text-decoration: underline $lambdao_green;
+ font-family: "urw_gothic_lbook", "Didact Gothic", sans-serif;
 }
 .w3rd {
   width: 33%;
