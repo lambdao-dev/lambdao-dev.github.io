@@ -64,8 +64,30 @@ html[data-theme="dark"] {
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Quattrocento";
+  src: url("/assets/fonts/quattrocento-latin-400-normal.woff2") format("woff2"),
+    url("/assets/fonts/quattrocento-latin-400-normal.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Quattrocento";
+  src: url("/assets/fonts/quattrocento-latin-700-normal.woff2") format("woff2"),
+    url("/assets/fonts/quattrocento-latin-700-normal.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
 body {
   line-height: 1.35;
+  font-family: "Quattrocento", serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
   font-family: "urw_gothic_lbook", "Didact Gothic", sans-serif;
 }
 
