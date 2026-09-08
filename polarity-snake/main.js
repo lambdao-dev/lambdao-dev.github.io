@@ -5,6 +5,25 @@ space: shift polarity`;
 
 characters = ["./title.png"];
 
+const LEVEL_ONE_MUSIC = {
+  lengthInMeasures: 32,
+  seed: 2169613095,
+  twoAxisStyle: {
+    percussiveMelodic: -0.5266665649414062,
+    calmEnergetic: 0.48833335876464845,
+  },
+  sectionRepeatBias: 0.25,
+};
+const LEVEL_FIVE_MUSIC = {
+  lengthInMeasures: 32,
+  seed: 4230371659,
+  twoAxisStyle: {
+    percussiveMelodic: 0.5983334350585938,
+    calmEnergetic: 0.5083333587646484,
+  },
+  sectionRepeatBias: 0.25,
+};
+
 options = {
   viewSize: { x: 100, y: 100 },
   theme: "simple",
@@ -22,7 +41,10 @@ options = {
   isReplayEnabled: false,
   isDrawingScoreFront: true,
   isShowingScore: false,
-  isSoundEnabled: false,
+  isSoundEnabled: true,
+  isPlayingBgm: true,
+  audioSeed: 88,
+  bgmOptions: LEVEL_ONE_MUSIC,
 };
 
 const COLS = 22;
@@ -56,6 +78,7 @@ let foodCount;
 let streak;
 let stepProgress;
 let pendingGrowth;
+let musicSeed;
 
 function update() {
   if (!ticks) {
@@ -86,6 +109,7 @@ function resetGame() {
   streak = 0;
   stepProgress = 0;
   pendingGrowth = 0;
+  musicSeed = LEVEL_FIVE_MUSIC.seed;
   placeFood();
 }
 
@@ -137,11 +161,13 @@ function moveSnake() {
 function eatFood() {
   foodCount++;
   if (food.polarity === polarity) {
+    play("jump");
     streak++;
     pendingGrowth++;
     const points = 10 * getMultiplier();
     addScore(points, cellX(food.x), cellY(food.y));
   } else {
+    play("select");
     streak = 0;
     if (snake.length === 1) {
       showGameOver();
@@ -152,12 +178,19 @@ function eatFood() {
   const nextLevel = floor(foodCount / FOODS_PER_LEVEL) + 1;
   if (nextLevel > level) {
     level = nextLevel;
+    if (level === 5) {
+      playBgm(LEVEL_FIVE_MUSIC);
+    } else if ((level - 5) % 10 === 0) {
+      musicSeed -= 7777;
+      playBgm({ ...LEVEL_FIVE_MUSIC, seed: musicSeed });
+    }
     addWall();
   }
   placeFood();
 }
 
 function showGameOver() {
+  play("powerUp");
   color(5);
   end("GAME OVER");
 }
@@ -192,6 +225,7 @@ function scoreGrazing(head) {
     if (wall.polarity !== polarity && distanceToWall(head, wall) === 1) {
       nearby.add(wall.id);
       if (!grazing.has(wall.id)) {
+        play("click");
         const speedMultiplier = ceil(getSpeed() * 20);
         addScore(5 * speedMultiplier, cellX(head.x), cellY(head.y));
       }

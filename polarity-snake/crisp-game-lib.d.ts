@@ -26,6 +26,15 @@ declare type Options = {
   isSoundEnabled?: boolean;
   viewSize?: { x: number; y: number };
   audioSeed?: number;
+  bgmOptions?: {
+    lengthInMeasures?: number;
+    seed?: number;
+    twoAxisStyle?: {
+      percussiveMelodic: number;
+      calmEnergetic: number;
+    };
+    sectionRepeatBias?: number;
+  };
   seed?: number;
   audioVolume?: number;
   theme?: ThemeName;
@@ -544,7 +553,7 @@ declare function play(
     note?: string;
   }
 ): void;
-declare function playBgm(): void;
+declare function playBgm(options?: Options["bgmOptions"]): void;
 declare function stopBgm(): void;
 declare function setAudioSeed(seed: number): void;
 declare function startRecording(): void;

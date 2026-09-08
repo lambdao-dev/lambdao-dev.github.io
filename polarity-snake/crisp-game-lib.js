@@ -2942,7 +2942,8 @@ lll
     let algoChipGainNode;
     exports.algoChipSession = void 0;
     let algoChipBgm;
-    let algoChipBgmSeed;
+    let algoChipBgmOptions;
+    let algoChipBgmOptionsKey;
     let algoChipSes = {};
     let disposeVisibilityController;
     let isSoundsSomeSoundsLibraryEnabled = false;
@@ -2961,6 +2962,7 @@ lll
         audioVolume = options.audioVolume;
         bgmName = options.bgmName;
         bgmVolume = options.bgmVolume;
+        algoChipBgmOptions = options.bgmOptions;
         if (typeof AlgoChip !== "undefined" &&
             AlgoChip !== null &&
             typeof AlgoChipUtil !== "undefined" &&
@@ -3004,7 +3006,7 @@ lll
             exports.algoChipSession = AlgoChipUtil.createAudioSession({
                 audioContext,
                 gainNode: algoChipGainNode,
-                workletBasePath: "https://abagames.github.io/algo-chip/worklets/",
+                workletBasePath: "./worklets/",
             });
             await exports.algoChipSession.ensureReady();
             exports.algoChipSession.setBgmVolume(0.5 * audioVolume);
@@ -3075,23 +3077,25 @@ lll
      * Play a background music
      */
     /** @ignore */
-    async function playBgm() {
+    async function playBgm(options = algoChipBgmOptions) {
         if (isBgmAudioFileReady && playAudioFile(bgmName, bgmVolume)) ;
         else if (exports.algoChipSession != null) {
-            if (algoChipBgm == null || algoChipBgmSeed != audioSeed) {
-                algoChipBgmSeed = audioSeed;
+            const optionsKey = JSON.stringify(options);
+            if (algoChipBgm == null || algoChipBgmOptionsKey !== optionsKey) {
+                algoChipBgmOptionsKey = optionsKey;
                 const random = new Random();
                 random.setSeed(audioSeed);
                 const calmEnergetic = random.get(-0.9, 0.9);
                 const percussiveMelodic = random.get(-0.9, 0.9);
-                algoChipBgm = await exports.algoChipSession.generateBgm({
+                const defaultOptions = {
                     seed: audioSeed,
                     lengthInMeasures: 32,
                     twoAxisStyle: { calmEnergetic, percussiveMelodic },
                     overrides: {
                         tempo: "medium",
                     },
-                });
+                };
+                algoChipBgm = await exports.algoChipSession.generateBgm(options !== null && options !== void 0 ? options : defaultOptions);
             }
             exports.algoChipSession.playBgm(algoChipBgm, { loop: true });
         }
@@ -4215,6 +4219,7 @@ lll
                 audioTempo: currentOptions.audioTempo,
                 bgmName: currentOptions.bgmName,
                 bgmVolume: currentOptions.bgmVolume,
+                bgmOptions: currentOptions.bgmOptions,
             });
         }
         setColor("black");
