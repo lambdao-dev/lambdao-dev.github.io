@@ -4359,6 +4359,7 @@ lll
             }
         }
         drawScoreOrTime();
+        char("a", 50, 50);
         if (typeof title !== "undefined" && title != null) {
             let maxLineLength = 0;
             title.split("\n").forEach((l) => {
@@ -4368,7 +4369,8 @@ lll
             });
             const x = Math.floor((size.x - maxLineLength * letterSize) / 2);
             title.split("\n").forEach((l, i) => {
-                print(l, x, Math.floor(size.y * 0.25) + i * letterSize, {
+                print(l, x, 51 + i * letterSize, {
+                    color: 3,
                     edgeColor: currentOptions.textEdgeColor.title,
                 });
             });
@@ -4383,7 +4385,8 @@ lll
             const lw = currentOptions.isUsingSmallText ? smallLetterWidth : letterSize;
             const x = Math.floor((size.x - maxLineLength * lw) / 2);
             description.split("\n").forEach((l, i) => {
-                print(l, x, Math.floor(size.y / 2) + i * letterSize, {
+                print(l, x, 64 + i * letterSize, {
+                    color: 2,
                     isSmallText: currentOptions.isUsingSmallText,
                     edgeColor: currentOptions.textEdgeColor.description,
                 });

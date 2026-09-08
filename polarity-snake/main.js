@@ -1,11 +1,9 @@
-title = "POLARITY SNAKE";
+title = "BINARY SLITHER";
 
-description = `
-[Arrows/WASD] Steer
-[Space/Tap] Switch
-`;
+description = `arrows/wasd controls
+space: shift polarity`;
 
-characters = [];
+characters = ["./title.png"];
 
 options = {
   viewSize: { x: 100, y: 100 },
