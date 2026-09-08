@@ -1,7 +1,7 @@
 ---
 title: Why Lambdao?
 author: len
-mathjax: true
+katex: true
 image: /assets/img/lambdao_preview.webp
 ---
 
