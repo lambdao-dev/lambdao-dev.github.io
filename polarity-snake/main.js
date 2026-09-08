@@ -1,7 +1,7 @@
 title = "BINARY SLITHER";
 
-description = `arrows/wasd controls
-space: shift polarity`;
+description = `arrows/wasd or gamepad
+space/button: shift polarity`;
 
 characters = ["./title.png"];
 
@@ -59,6 +59,14 @@ const DIRECTIONS = {
   up: { x: 0, y: -1 },
   down: { x: 0, y: 1 },
 };
+const GAMEPAD_KEYS = {
+  ArrowLeft: false,
+  ArrowRight: false,
+  ArrowUp: false,
+  ArrowDown: false,
+  Space: false,
+};
+const GAMEPAD_AXIS_THRESHOLD = 0.5;
 
 /** @type {{x: number, y: number}[]} */
 let snake;
@@ -79,6 +87,30 @@ let streak;
 let stepProgress;
 let pendingGrowth;
 let musicSeed;
+
+pollGamepads();
+
+function pollGamepads() {
+  const gamepads = navigator.getGamepads?.() || [];
+  const gamepad = [...gamepads].find((candidate) => candidate?.connected);
+  const buttons = gamepad?.buttons || [];
+  const axes = gamepad?.axes || [];
+  const nextKeys = {
+    ArrowLeft: buttons[14]?.pressed || axes[0] < -GAMEPAD_AXIS_THRESHOLD,
+    ArrowRight: buttons[15]?.pressed || axes[0] > GAMEPAD_AXIS_THRESHOLD,
+    ArrowUp: buttons[12]?.pressed || axes[1] < -GAMEPAD_AXIS_THRESHOLD,
+    ArrowDown: buttons[13]?.pressed || axes[1] > GAMEPAD_AXIS_THRESHOLD,
+    Space: buttons[0]?.pressed || false,
+  };
+  Object.keys(GAMEPAD_KEYS).forEach((code) => {
+    if (nextKeys[code] !== GAMEPAD_KEYS[code]) {
+      const type = nextKeys[code] ? "keydown" : "keyup";
+      document.dispatchEvent(new KeyboardEvent(type, { code }));
+      GAMEPAD_KEYS[code] = nextKeys[code];
+    }
+  });
+  requestAnimationFrame(pollGamepads);
+}
 
 function update() {
   if (!ticks) {
